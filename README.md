@@ -16,11 +16,11 @@ The application is specifically optimized to run efficiently on a hardware-const
 - `db_connect.php` - Database connection configuration.
 - `login.php` - User authentication page.
 - `index.php` - Home dashboard showing the recipe directory.
-- `recipe_detail.php` - Single recipe detailed view panel.
-- `add_recipe.html` - User interface for the add function.
-- `add_recipe.php` - Server-side data processing and insertion logic.
-- `delete_html` - User interface for the delete function.
-- `delete_php` - Backend side for delete function. 
+- `recipes_detail.php` - Single recipe detailed view panel.
+- `add_recipes.html` - User interface for the add function.
+- `add_recipes.php` - Server-side data processing and insertion logic.
+- `delete_recipes_html` - User interface for the delete function.
+- `delete_recipes_php` - Backend side for delete function. 
 - `members.php` - Integrated team profile presentation page.
 - `database.sql` - Exported MariaDB database creation schema.
 
