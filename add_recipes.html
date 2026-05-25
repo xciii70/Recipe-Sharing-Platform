@@ -1,0 +1,20 @@
+<form action="add_recipe.php" method="POST" enctype="multipart/form-data">
+
+    <label>Recipe Title</label>
+    <input type="text" name="title" required>
+
+    <label>Category</label>
+    <input type="text" name="category" required>
+
+    <label>Ingredients</label>
+    <textarea name="ingredients" required></textarea>
+
+    <label>Instructions</label>
+    <textarea name="instructions" required></textarea>
+
+    <label>Recipe Image</label>
+    <input type="file" name="image" accept="image/*">
+
+    <button type="submit">Add Recipe</button>
+
+</form>
