@@ -1,0 +1,169 @@
+/* ==========================================
+   1. Global style definition (Same background and fonts for the whole website)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F3EFDD; 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+}
+
+/* 全站統一的大標題風格 */
+h1 {
+    color: black;
+    font-family: "Marker Felt", fantasy;
+    font-weight: 500;
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ==========================================
+   2. Horizontal navigation bar - Navbar 
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CAC6BD; 
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-logo {
+    font-family: "Marker Felt", fantasy;
+    font-size: 32px;
+    color: black;
+}
+
+.nav-logo a {
+    text-decoration: none; /* Key: To remove the browser's default buttom line */
+    color: inherit;        /* Key: To inherit the black of the parent layer, 
+                              and prevet it become the defualt color, blue */
+    cursor: pointer;       /* Displays finger indicator when mouse hovers over */
+}
+
+.nav-links {
+    display: flex;       /* Key: Make the list become horizontal */
+    list-style: none;    /* Remove the list dots */
+    gap: 25px;           /* The distance between the items */
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    opacity: 0.7; /* The opacity when it flows */
+}
+
+.btn-logout {
+    border: 2px solid black; 
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+.btn-logout:hover {
+    background-color: black;
+    color: #F3EFDD !important;
+}
+
+/* ==========================================
+   3. Card-type components (General style for group member cards & recipes cards)
+   ========================================== */
+.member-card {
+    background-color: #CAC6BD;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    display: inline-block;
+}
+
+/* Recipe card grid system (for the homepage) */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Recipe card */
+.recipe-card {
+    background-color: #CAC6BD; 
+    border-radius: 15px;       
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* It flows slightly as the mouse glides by */
+}
+
+.recipe-image-placeholder {
+    height: 180px;
+    background-color: #E2DDD0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+}
+
+.recipe-content {
+    padding: 20px;
+}
+
+.recipe-title {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.recipe-author {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* ==========================================
+   4. A floating "+" button on the right-down side for adding a new recipe
+   ========================================== */
+.floating-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 65px;
+    height: 65px;
+    background-color: black; /* To emphisize there's a button */
+    color: #F3EFDD;          /* Use the same color scheme as the website for "+" */
+    text-decoration: none;
+    font-size: 36px;
+    font-family: "Marker Felt", fantasy;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+}
