@@ -15,6 +15,7 @@ The application is specifically optimized to run efficiently on a hardware-const
 ## Repository File Structure
 - `db_connect.php` - Database connection configuration.
 - `login.php` - User authentication page.
+- `signup.php` - User register page. 
 - `logout.php` - User exit page.
 - `index.php` - Home dashboard showing the recipe directory.
 - `recipes_detail.php` - Single recipe detailed view panel.
