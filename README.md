@@ -21,6 +21,7 @@ The application is specifically optimized to run efficiently on a hardware-const
 - `recipes_detail.php` - Single recipe detailed view panel.
 - `add_recipes.html` - User interface for the add function.
 - `add_recipes.php` - Server-side data processing and insertion logic.
+- `edit_recipes.php` - Recipe editing page.
 - `delete_recipes.html` - User interface for the delete function.
 - `delete_recipes.php` - Backend side for delete function.
 - `style.css` - Style for user interface along side html. 
