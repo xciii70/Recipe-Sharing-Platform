@@ -291,3 +291,599 @@ h1 {
     font-weight: bold;
     text-decoration: underline;
 }
+
+/* ==========================================
+   7. Adding and editing form Styles
+   ========================================== */
+.recipe-form-container {
+    background-color: #CAC6BD;
+    border-radius: 15px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.recipe-form-title {
+    font-family: "Marker Felt", fantasy;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.recipe-form-container .form-group label {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.recipe-form-container .form-group input[type="text"] {
+    padding: 10px 12px;    
+    font-size: 15px;       
+    border-radius: 8px;
+}
+
+.recipe-form-container .form-group input[type="file"] {
+    border-radius: 8px;
+}
+
+/* Make the text input box on the new page taller 
+   and allow more characters to be typed.  */
+
+.form-group textarea {
+
+    width: 100%;
+    height: 100px; /* Give it a confortable height.  */
+    padding: 10px;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #F3EFDD;
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    resize: none; /* Restrict the users from randomly dragging boxes. */
+    scrollbar-color: #888888 #F3EFDD;
+}
+
+/* Detail aesthetic enhancements for Chrome/Edge/Safari */
+.recipe-form-container .form-group textarea::-webkit-scrollbar {
+    width: 8px; /* To make the rollers thinner and more delicate */
+}
+
+.recipe-form-container .form-group textarea::-webkit-scrollbar-track {
+    background: #F3EFDD; /* 👈 Change the original white background to the yellow background. */
+    border-radius: 0 8px 8px 0; /* Make the right side match the rounded corners of the text box. */
+}
+
+.recipe-form-container .form-group textarea::-webkit-scrollbar-thumb {
+    background: #888888; /* Change the slider color to a more subtle gray. */
+    border-radius: 4px;
+}
+
+.form-group textarea:focus { outline: none; }
+
+.btn-recipe-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: #F3EFDD;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-recipe-submit:hover { transform: scale(1.02); }/* ==========================================
+   1. Global style definition (Same background and fonts for the whole website)
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F3EFDD; 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+}
+
+/* General style for the whole website */
+h1 {
+    color: black;
+    font-family: "Marker Felt", fantasy;
+    font-weight: 500;
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ==========================================
+   2. Horizontal navigation bar - Navbar 
+   ========================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CAC6BD; 
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-logo {
+    font-family: "Marker Felt", fantasy;
+    font-size: 32px;
+    color: black;
+}
+
+.nav-logo a {
+    text-decoration: none; /* Key: To remove the browser's default buttom line */
+    color: inherit;        /* Key: To inherit the black of the parent layer,
+                              and prevet it become the defualt color, blue */
+    cursor: pointer;       /* Displays finger indicator when mouse hovers over */
+}
+
+.nav-links {
+    display: flex;       /* Key: Make the list become horizontal */
+    list-style: none;    /* Remove the list dots */
+    gap: 25px;           /* The distance between the items */
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    opacity: 0.7; /* The opacity when it flows */
+}
+
+.btn-logout {
+    border: 2px solid black; 
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+.btn-logout:hover {
+    background-color: black;
+    color: #F3EFDD !important;
+}
+
+/* ==========================================
+   3. Card-type components (General style for group member cards & recipes cards)
+   ========================================== */
+
+.member-card {
+    background-color: #CAC6BD;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    display: inline-block;
+}
+
+/* Recipe card grid system (for the homepage) */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Recipe card */
+.recipe-card {
+    background-color: #CAC6BD; 
+    border-radius: 15px;       
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* It flows slightly as the mouse glides by */
+}
+
+.recipe-image-placeholder {
+    height: 180px;
+    background-color: #E2DDD0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+}
+
+.recipe-content {
+    padding: 20px;
+}
+
+.recipe-title {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.recipe-author {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* ==========================================
+   4. A floating "+" button on the right-down side for adding a new recipe
+   ========================================== */
+
+.floating-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 65px;
+    height: 65px;
+    background-color: black; /* To emphisize there's a button */
+    color: #F3EFDD;          /* Use the same color scheme as the website for "+" */
+    text-decoration: none;
+    font-size: 36px;
+    font-family: "Marker Felt", fantasy;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   5. The style for member login & member registeration
+   ========================================== */
+
+.authentication-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	height:100vh;
+    max-height: 100vh; 
+    width: 100%;
+}
+
+/* Make the login page in the center */
+.authentication-wrapper {
+    display: flex;
+    flex-direction: column; /* Arrange child elements vertically from top to bottom */
+    align-items: center;     /* Key: Force the logo and card to be horizontally and centered */
+    width: 100%;
+}
+
+/* 3. LOGO block style and spacing */
+.authentication-brand {
+    text-align: center;
+    margin-bottom: 12px;
+	position: relative;
+    left: -12px;
+}
+
+.authentication-logo {
+    font-family: "Marker Felt", fantasy;
+    font-size: 43px;
+    color: black;
+    margin-top: 20px;
+}
+
+.authentication-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #555555;
+    letter-spacing: 1px;
+	position: relative;
+    left: 10px;
+}
+
+.authentication-container {
+    background-color: #CAC6BD;
+    border-radius: 15px;
+    padding: 20px 30px;
+	width: 300px;
+    margin: 0 auto;
+	margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.authentication-title {
+    font-size: 28px; 
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+/* Input box */
+
+.form-group input {
+    width: 100%;
+	padding: 8px 10px;
+    border: 0px; 
+    border-radius: 6px;
+    background-color: #F3EFDD; 
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group input:focus {
+    outline: none;
+}
+
+/* Login/Register button */
+
+.btn-authentication {
+    width: 100%;
+    padding:  8px;
+    background-color: black;
+    color: #F3EFDD;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: transform 0.1s;
+}
+
+.btn-authentication:hover {
+    transform: scale(1.1);
+}
+
+.btn-authentication:active {
+    transform: scale(0.98);
+}
+
+/* Switch prompt words */
+.authentication-switch {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.authentication-switch a {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   7. Adding and editing form Styles
+   ========================================== */
+
+.recipe-form-container {
+    background-color: #CAC6BD;
+    border-radius: 15px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.recipe-form-title {
+    font-family: "Marker Felt", fantasy;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.recipe-form-container .form-group label {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.recipe-form-container .form-group input[type="text"] {
+    padding: 10px 12px;    
+    font-size: 15px;       
+    border-radius: 8px;
+}
+
+.recipe-form-container .form-group input[type="file"] {
+    border-radius: 8px;
+}
+
+/* 讓新增頁面的文字輸入框可以變高、打比較多字 */
+
+.form-group textarea {
+    width: 100%;
+    height: 100px; /* 給予適當的高度 */
+    padding: 10px;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #F3EFDD;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    resize: none; /* 限制使用者不能亂拉框框破壞排版 */
+    scrollbar-color: #888888 #F3EFDD;
+}
+
+/* 針對 Chrome / Edge / Safari 的細緻美化 */
+
+.recipe-form-container .form-group textarea::-webkit-scrollbar {
+    width: 8px; /* 讓滾軸變得細細的更精緻 */
+}
+
+.recipe-form-container .form-group textarea::-webkit-scrollbar-track {
+    background: #F3EFDD; /* 👈 把原本的白底改成你們的鵝黃色背景 */
+    border-radius: 0 8px 8px 0; /* 讓右邊配合文字框的圓角 */
+}
+
+.recipe-form-container .form-group textarea::-webkit-scrollbar-thumb {
+    background: #888888; /* 滑塊顏色改成低調的灰色 */
+    border-radius: 4px;
+}
+
+.form-group textarea:focus{ 
+	outline: none;
+}
+
+.btn-recipe-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: #F3EFDD;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-recipe-submit:hover { transform: scale(1.02); }
+
+/* ==========================================
+   7.5 詳情與編輯頁面專用：Edit & Delete 按鈕群組
+   ========================================== */
+
+.recipe-btn-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* 讓 a 標籤按鈕化，並保持極簡黑色風 */
+
+.btn-edit, .btn-delete {
+    flex: 1;
+    text-align: center;
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /* 拔掉超連結底線 */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* 編輯按鈕：延續你們的黑色帥氣風 */
+
+.btn-edit {
+    background-color: grey;
+    color: #F3EFDD;
+}
+
+.btn-edit:hover {
+background-color: black;
+    transform: scale(1.02);
+}
+
+/* 刪除按鈕：使用低調的高級感深灰色，既顯眼又不會過於刺眼 */
+.btn-delete {
+    background-color: grey;
+    color: #F3EFDD;
+}
+
+.btn-delete:hover {
+    background-color: #BD3A3A; /* 滑過去時變成警告性的紅色，提醒使用者這是刪除 */
+    transform: scale(1.02);
+}
+
+/* ==========================================
+   7.6 詳情頁專用：自動撐高且不啟動滾輪的文字顯示框
+   ========================================== */
+
+.recipe-detail-text-box {
+    width: 100%;
+    min-height: 100px;        /* 預設維持跟 textarea 一樣的 100px 高度 */
+    height: auto;             /* ✨ 核心關鍵：高度由文字內容自動撐開！ */
+    padding: 10px;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #F3EFDD; /* 完美繼承鵝黃色 */
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+
+    /* ✨ 核心關鍵：保留使用者輸入的換行與空格，且字太多時會自動換行不爆框 */
+    white-space: pre-wrap;     
+    word-wrap: break-word;     
+    overflow: visible;         /* 徹底關閉、不啟動任何滾輪功能 */
+}
+
+/* ==========================================
+   7.7 詳情頁專用：高質感圖片框與破圖防禦機制
+   ========================================== */
+
+.detail-image-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* 真正的食譜圖片：控制比例、加上圓角與低調陰影 */
+.detail-real-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* 完美防破圖：當沒有圖片或路徑失效時顯示的質感區塊 */
+
+.detail-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #E2DDD0; /* 沿用你們原本溫和的水泥灰 */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;   /* 讓煎蛋跟文字上下並排 */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 煎蛋放大，更有設計感 */
+.placeholder-icon {
+    font-size: 52px;
+    animation: egg-float 3s ease-in-out infinite; /* 順手幫你加個微浮動特效 */
+}
+
+/* 下方提示小字：讓網頁看起來像完成度極高的商業系統 */
+.placeholder-text {
+    font-size: 14px;
+    color: #777570;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* 煎蛋微微飄浮的可愛動畫 */
+@keyframes egg-float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
