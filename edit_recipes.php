@@ -1,7 +1,42 @@
 <?php
-// Here is for the back end // 
-?>
 
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+include 'db_connect.php';
+
+if (!isset($_GET['id'])) {
+    die("Recipe ID not found.");
+}
+
+$recipe_id = intval($_GET['id']);
+
+$sql = "SELECT * FROM recipes WHERE id = ?";
+
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    die("Prepare failed: " . $conn->error);
+}
+
+$stmt->bind_param("i", $recipe_id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+if ($result->num_rows == 0) {
+    die("Recipe not found.");
+}
+
+$recipe = $result->fetch_assoc();
+
+$stmt->close();
+
+?>
 
 <!DOCTYPE html>
 <html lang="English">
