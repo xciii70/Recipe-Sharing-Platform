@@ -1,19 +1,19 @@
-/* ========================================
+/* ==========================================================================
    1. GLOBAL RESET & BASE STYLES
-   ======================================== */
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding/borders are included in total width/height */
 }
 
 body {
-    background-color: #F3EFDD; /* Brand background color */
+    background-color: #F3EFDD; /* Brand primary light cream background */
     font-family: Arial, Helvetica, sans-serif;
     color: #000000;
 }
 
-/* Global main heading style (mainly for homepage and main banners) */
+/* Global main heading style (primarily used for homepage banners) */
 h1 {
     color: black;
     font-family: "Marker Felt", fantasy;
@@ -22,27 +22,32 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Global container to restrict max-width and center content */
+/* Main content layout wrapper for centering and bounding content */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 1200px; /* Prevents layouts from stretching too wide on large screens */
+    margin: 0 auto;    /* Centers the container horizontally */
+    padding: 40px 40px; /* 🔒 40px horizontal padding defines the alignment line for content */
 }
 
 
-/* ====================================================
+/* ==========================================================================
    2. HORIZONTAL NAVIGATION BAR (NAVBAR COMPONENT)
-   ==================================================== */
+   ========================================================================== */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes brand logo and links to opposite ends */
     align-items: center;
-    background-color: #CAC6BD; /* Navbar cement gray background */
-    padding: 15px 40px;
+    background-color: #CAC6BD;      /* Brand cement gray */
+    padding: 15px 40px;             /* 🔒 40px side padding perfectly aligns with the container line */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    /* 📌 Sticky Scroll Lock Mechanism */
+    position: sticky;
+    top: 0;          /* Locks the navbar seamlessly to the top of the viewport on scroll */
+    z-index: 1000;   /* Keeps navbar on top layer so content rolls underneath neatly */
 }
 
-/* Logo block styling and typography */
+/* Navbar Logo Brand Typography */
 .nav-logo {
     font-family: "Marker Felt", fantasy;
     font-size: 32px;
@@ -50,16 +55,16 @@ h1 {
 }
 
 .nav-logo a {
-    text-decoration: none; /* Removes the browser's default link underline */
-    color: inherit;        /* Inherits black from parent to prevent default blue */
-    cursor: pointer;       /* Displays pointer hand indicator on hover */
+    text-decoration: none; /* Removes default browser hyperlink underline */
+    color: inherit;        /* Inherits black color from parent wrapper */
+    cursor: pointer;       /* Changes cursor to hand pointer on hover */
 }
 
-/* Right-side navigation links list */
+/* Right-side navigation links layout */
 .nav-links {
-    display: flex;        /* Aligns the list items horizontally */
-    list-style: none;     /* Removes standard list dots */
-    gap: 25px;            /* Horizontal spacing between items */
+    display: flex;         /* Renders list items in a single horizontal row */
+    list-style: none;      /* Strips out standard bullet points */
+    gap: 25px;             /* Horizontal gutter spacing between link items */
     align-items: center;
 }
 
@@ -71,10 +76,10 @@ h1 {
 }
 
 .nav-links a:hover {
-    opacity: 0.7;         /* Subtle opacity fade on hover */
+    opacity: 0.7;          /* Smooth visual fading feedback on hover */
 }
 
-/* Logout button designed as a pill/capsule shape */
+/* Pill/Capsule shaped logout button */
 .btn-logout {
     border: 2px solid black; 
     padding: 6px 15px;
@@ -83,46 +88,46 @@ h1 {
 
 .btn-logout:hover {
     background-color: black;
-    color: #F3EFDD !important; /* Forces color switch to brand yellow on hover */
+    color: #F3EFDD !important; /* Flips color scheme to yellow text on hover */
 }
 
 
 /* ==========================================================================
    3. GENERAL FORM GROUPS (SHARED INPUT COMPONENT STYLES)
    ========================================================================== */
-/* Generic wrapper to manage vertical spacing between different form fields */
+/* Layout wrapper ensuring consistent vertical breathing room between form rows */
 .form-group {
     margin-bottom: 10px;
 }
 
-/* Field labels positioned above inputs */
+/* Field labels positioned stacked directly above their input boxes */
 .form-group label {
     display: block;
     font-weight: 600;
-    margin-bottom: 2px;
-    font-size: 14px;
+    margin-bottom: 5px;
+    font-size: 16px;
 }
 
-/* Standard single-line input box style used across the website */
+/* Site-wide standardized single-line input text field styling */
 .form-group input {
     width: 100%;
     padding: 8px 10px;
     border: 0px; 
     border-radius: 6px;
-    background-color: #F3EFDD; 
-    font-size: 14px;
+    background-color: #F3EFDD; /* Uses background color to create a soft inset effect */
+    font-size: 16px;
     font-family: Arial, sans-serif;
 }
 
 .form-group input:focus {
-    outline: none; /* Removes the default browser focus border ring */
+    outline: none; /* Disables default native blue browser focus outlines */
 }
 
 
 /* ==========================================================================
    4. MEMBER AUTHENTICATION PAGES (LOGIN & REGISTER)
    ========================================================================== */
-/* Full-screen viewport centering wrapper */
+/* Full screen layout wrapper centering cards vertically and horizontally */
 .authentication-body {
     display: flex;
     justify-content: center;
@@ -132,7 +137,7 @@ h1 {
     width: 100%;
 }
 
-/* Auth core wrapper to vertically align brand logo and card components */
+/* Centered stack organizing brand branding above the credential sheets */
 .authentication-wrapper {
     display: flex;
     flex-direction: column; 
@@ -140,48 +145,48 @@ h1 {
     width: 100%;
 }
 
-/* Brand logo block layout adjustment and spacing */
+/* Header branding wrapper for login pages */
 .authentication-brand {
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     position: relative;
-    left: -12px;
+    left: -10px; /* Slight optical adjustment shift left */
 }
 
 .authentication-logo {
     font-family: "Marker Felt", fantasy;
-    font-size: 43px;
+    font-size: 56px;
     color: black;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .authentication-subtitle {
     font-family: Arial, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     color: #555555;
     letter-spacing: 1px;
     position: relative;
-    left: 10px;
+    left: 10px; /* Horizontal structural offset layer */
 }
 
-/* Distinct compact gray card for Login and Registration forms */
+/* Standalone compact gray card wrapping Login and Sign-up fields */
 .authentication-container {
     background-color: #CAC6BD;
     border-radius: 15px;
-    padding: 20px 30px;
-    width: 300px;
+    padding: 30px 30px;
+    width: 350px;
     margin: 0 auto;
     margin-bottom: 20px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .authentication-title {
-    font-size: 28px; 
+    font-size: 36px; 
     text-align: center;
-    margin-bottom: 1px;
+    margin-bottom: 0px;
 }
 
-/* Main authentication submit button */
+/* Main authentication block level submit action button */
 .btn-authentication {
     width: 100%;
     padding: 8px;
@@ -189,26 +194,26 @@ h1 {
     color: #F3EFDD;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 5px;
     transition: transform 0.1s;
 }
 
 .btn-authentication:hover {
-    transform: scale(1.1); /* Scales up slightly on hover */
+    transform: scale(1.1); /* Scales up slightly to attract click attention */
 }
 
 .btn-authentication:active {
-    transform: scale(0.98); /* Tactile press feedback on click */
+    transform: scale(0.98); /* Yields down on click to mimic physical button tactile compression */
 }
 
-/* Bottom alternative action link (e.g., "Not registered? Sign Up") */
+/* Redirection footer label (e.g. "Not registered yet? Sign Up") */
 .authentication-switch {
     text-align: center;
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .authentication-switch a {
@@ -219,9 +224,9 @@ h1 {
 
 
 /* ==========================================================================
-   5. HOMEPAGE SYSTEM (GRID SYSTEM, CARDS & FLOATING BUTTON)
+   5. HOMEPAGE SYSTEM (RESPONSIVE GRID, SHOWCASE CARDS & FLOATING ACTION)
    ========================================================================== */
-/* Profile showcase cards for the Group Members page */
+/* [Legacy Reference] Original profile presentation showcase card */
 .member-card {
     background-color: #CAC6BD;
     border-radius: 15px;
@@ -230,7 +235,7 @@ h1 {
     display: inline-block;
 }
 
-/* Responsive grid system for homepage recipe cards (Min width: 280px per item) */
+/* Homepage responsive layout grid auto-filling cells dynamically (min-width: 280px) */
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -238,11 +243,11 @@ h1 {
     margin-top: 20px;
 }
 
-/* Individual recipe showcase card container */
+/* Recipe submission preview card container */
 .recipe-card {
     background-color: #CAC6BD; 
     border-radius: 15px;      
-    overflow: hidden;
+    overflow: hidden; /* Clips top images correctly beneath the container border radius */
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -250,20 +255,20 @@ h1 {
 }
 
 .recipe-card:hover {
-    transform: translateY(-5px); /* Lifts up card slightly on hover */
+    transform: translateY(-5px); /* Elegant upward floating hover transformation */
 }
 
-/* Default placeholder frame for recipe list items lacking custom images */
+/* Default frame block rendered for recipe items lacking dedicated custom uploads */
 .recipe-image-placeholder {
     height: 180px;
-    background-color: #E2DDD0; 
+    background-color: #E2DDD0; /* Darker core accent fill */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 64px;
 }
 
-/* Text area padding inside the homepage recipe cards */
+/* Padding container isolating textual descriptions under preview headers */
 .recipe-content {
     padding: 20px;
 }
@@ -281,7 +286,7 @@ h1 {
     color: #333;
 }
 
-/* Fixed positioning circular floating "+" action button at bottom-right corner */
+/* Fixed viewport absolute circular floating "+" insertion button at lower right */
 .floating-btn {
     position: fixed;
     bottom: 40px;
@@ -293,7 +298,7 @@ h1 {
     text-decoration: none;
     font-size: 36px;
     font-family: "Marker Felt", fantasy;
-    border-radius: 50%;
+    border-radius: 50%; /* Truncates bounding box into a perfect circle */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,46 +312,47 @@ h1 {
 
 
 /* ==========================================================================
-   6. ADD & EDIT RECIPE FORMS STYLING
+   6. CREATION & MODIFICATION FORM VIEWS (RECIPE FORMS STYLING)
    ========================================================================== */
-/* Core centralized card container for formula submissions */
+/* Main centralized presentation card tracking formula submissions */
 .recipe-form-container {
     background-color: #CAC6BD;
     border-radius: 15px;
     padding: 30px 40px;
     width: 100%;
-    max-width: 500px;
+    max-width: 500px; /* Restricts width to keep fields readable on wide views */
     margin: 40px auto;
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-/* Main title inside the submission container card */
+/* Form sheet header text style */
 .recipe-form-title {
     font-family: "Marker Felt", fantasy;
-    font-size: 40px;
+    font-size: 36px;
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
-/* Label size and font weights specifically for creation/edit fields */
+/* Label size tweaks explicitly applied within creation panels */
 .recipe-form-container .form-group label {
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 14px;
+    margin-bottom: 3px;
     font-weight: bold;
 }
 
-/* Customized inputs adjustments for creation and modification card */
+/* Custom form short-text fields refinement overrides */
 .recipe-form-container .form-group input[type="text"] {
     padding: 10px 12px;    
-    font-size: 15px;       
+    font-size: 13px;       
     border-radius: 8px;
 }
 
+/* File selection dialog target corners adjustments */
 .recipe-form-container .form-group input[type="file"] {
     border-radius: 8px;
 }
 
-/* [Creation & Modification Only] True multiline textarea (Fixed height with custom scroll) */
+/* Dedicated multiline recipe direction/ingredients entry container (Textarea) */
 .form-group textarea {
     width: 100%;
     height: 100px; 
@@ -354,32 +360,32 @@ h1 {
     border: 0px;
     border-radius: 8px;
     background-color: #F3EFDD;
-    font-size: 15px;
+    font-size: 13px;
     font-family: Arial, sans-serif;
-    resize: none; /* Strictly prevents manual box stretching to preserve layouts */
-    scrollbar-color: #888888 #F3EFDD; /* Custom scroll colors for Firefox */
+    resize: none; /* 🔒 Hard-prevents user box dragging to preserve system responsive structures */
+    scrollbar-color: #888888 #F3EFDD; /* Native color scroll fields mapping for Firefox */
 }
 
 .form-group textarea:focus { 
     outline: none; 
 }
 
-/* Fine-grained scrollbar customization for Webkit Browsers (Chrome / Edge / Safari) */
+/* Webkit Engine Scrollbar optimization tracks (Chrome / Edge / Safari) */
 .recipe-form-container .form-group textarea::-webkit-scrollbar {
-    width: 8px; /* Makes scrollbar thinner and more elegant */
+    width: 8px; /* Makes scrollbar narrow and minimalist */
 }
 
 .recipe-form-container .form-group textarea::-webkit-scrollbar-track {
-    background: #F3EFDD; /* Track color matches form fields background */
-    border-radius: 0 8px 8px 0; /* Align corners nicely with the wrapper roundings */
+    background: #F3EFDD;
+    border-radius: 0 8px 8px 0; /* Flushes nicely into the parent component right corner rounded arc */
 }
 
 .recipe-form-container .form-group textarea::-webkit-scrollbar-thumb {
-    background: #888888; /* Low-profile neutral gray thumb slider */
+    background: #888888; /* Minimalist sliding anchor thumb */
     border-radius: 4px;
 }
 
-/* Form submission large button */
+/* Full width main recipe submission trigger button */
 .btn-recipe-submit {
     width: 100%;
     padding: 12px;
@@ -399,64 +405,64 @@ h1 {
 
 
 /* ==========================================================================
-   7. RECIPE DETAIL PAGE ONLY STYLES
+   7. RECIPE DETAILS SHOWCASE VIEW (RECIPE DETAIL PAGE ONLY STYLES)
    ========================================================================== */
-/* [Detail View Only] Custom responsive container mimicking textareas without enabling scrolls */
+/* [Detail-View Only] Read-Only responsive field box mimicking an input container */
 .recipe-detail-text-box {
     width: 100%;
-    min-height: 100px;        /* Preserves baseline height layout when texts are scarce */
-    height: auto;             /* KEY: Drives automatic vertical expansion based on text content */
+    min-height: 100px;        /* Guarantees structural consistency even with short strings */
+    height: auto;             /* 🔒 CRITICAL: Drives automatic vertical box expansion based on word volume */
     padding: 10px;
     border: 0px;
     border-radius: 8px;
-    background-color: #F3EFDD; /* Matches brand background tone */
+    background-color: #F3EFDD; 
     font-size: 15px;
     font-family: Arial, sans-serif;
     color: #000000;
     line-height: 1.6;
     
-    white-space: pre-wrap;     /* KEY: Preserves user input line-breaks and custom tab spaces */
-    word-wrap: break-word;     /* Truncates ultra-long continuous words gracefully */
-    overflow: visible;         /* Hard-disables any internal scrolling behaviors */
+    white-space: pre-wrap;     /* 🔒 CRITICAL: Formally respects text line breaks and indentations from DB */
+    word-wrap: break-word;     /* Truncates continuous long literal string leaks cleanly */
+    overflow: visible;         /* Hard disables overflow bars, keeping full content readable */
 }
 
-/* Detail page image wrapper containing top margin spacing compensation */
+/* Detail view top graphic spacing layer */
 .detail-image-wrapper {
     position: relative;
     width: 100%;
-    margin-top: 15px;          /* Substitutes the deleted label to provide breathing room from h1 */
+    margin-top: 15px;          /* Compensating margin to keep space below main h1 headers */
 }
 
-/* Detail View: True upload rendering adjustments */
+/* Detail page custom food graphic rendering constraints */
 .detail-real-image {
     width: 100%;
     max-height: 250px;
-    object-fit: cover;         /* Clean croppings preventing proportion distortions */
+    object-fit: cover;         /* Crops images neatly to fit aspect ratio without distorting proportions */
     border-radius: 8px;
     display: block;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
 }
 
-/* Detail View [Fallback Security]: Placeholder triggered when paths break or images are absent */
+/* Safety Fallback: Rendered with floating egg animation when media files are missing */
 .detail-image-placeholder {
     width: 100%;
     height: 200px;
-    background-color: #E2DDD0; /* Soft balanced cement gray background */
+    background-color: #E2DDD0; 
     border-radius: 8px;
     display: flex;
-    flex-direction: column;   /* Places fried-egg icon and fallback message vertically */
+    flex-direction: column;   /* Stacks placeholder graphic symbol and caption notice vertically */
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-/* Floating fried egg icon styling */
+/* Floating fried egg emoji style definition */
 .placeholder-icon {
     font-size: 52px;
-    animation: egg-float 3s ease-in-out infinite; /* Bound to 3-second floating loop below */
+    animation: egg-float 3s ease-in-out infinite; /* Bound to continuous 3-second drifting keyframe loop below */
 }
 
-/* High-finish subtexts beneath the fallback icon */
+/* Muted high finish fallback notice description font */
 .placeholder-text {
     font-size: 14px;
     color: #777570;
@@ -464,7 +470,7 @@ h1 {
     letter-spacing: 0.5px;
 }
 
-/* Keyframe animations handling the idle drifting movement of the egg */
+/* Keyframes tracking the seamless slow drifting drift loop of the egg item */
 @keyframes egg-float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-6px); }
@@ -473,18 +479,18 @@ h1 {
 
 
 /* ==========================================================================
-   8. BOTTOM COMPONENT CONTROL ACTION GROUPS (EDIT & DELETE)
+   8. COMPONENT CONTROL MANIPULATION ELEMENT ACTIONS (EDIT & DELETE)
    ========================================================================== */
-/* Flexible row wrapper aligning Edit and Delete choices symmetrically */
+/* Inline container spreading edit and removal options symmetrically apart */
 .recipe-btn-group {
     display: flex;
     gap: 15px;
     margin-top: 20px;
 }
 
-/* Generic anchor configurations transforming simple links into actionable button elements */
+/* Morphing anchor structures into physical clickable button interfaces */
 .btn-edit, .btn-delete {
-    flex: 1;
+    flex: 1; /* Splits spacing equally between both anchors */
     text-align: center;
     display: block;
     padding: 12px;
@@ -496,7 +502,7 @@ h1 {
     transition: transform 0.2s;
 }
 
-/* Edit command configurations: Darkens into absolute black on cursor entries */
+/* Modification command colors: Transitions cleanly to pitch black on hover */
 .btn-edit {
     background-color: grey;
     color: #F3EFDD;
@@ -507,13 +513,119 @@ h1 {
     transform: scale(1.02);
 }
 
-/* Delete command configurations: Warning trigger transforming into crimson reds */
+/* Danger trigger action elements: Transitions into warnings alert crimson */
 .btn-delete {
     background-color: grey;
     color: #F3EFDD;
 }
 
 .btn-delete:hover {
-    background-color: #BD3A3A; /* Warning alert red color */
+    background-color: #BD3A3A; 
     transform: scale(1.02);
+}
+
+
+/* ==========================================================================
+   9. GROUP MEMBERS PAGE COMPONENT
+   ========================================================================== */
+/* 🔒 Isolated member page wrapper: Syncs page margins to flush align with the navbar brand logo */
+.member-page-wrapper {
+    margin-top: 5px;
+    padding-left: 20px;  /* 👈 Global container (20px) + This (20px) = 40px, matching Navbar alignment */
+    padding-right: 20px; /* 👈 Right side symmetrical alignment override */
+}
+
+/* Section Header styling for introduction panel */
+.member-page-title {
+    font-family: "Marker Felt", fantasy;
+    font-size: 45px; 
+    font-weight: 400;
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Horizontal alignment container (Can be swapped with grid configurations) */
+.member-badge-grid {
+    display: grid;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: stretch; /* Forces all cards in the row to stretch to identical heights automatically */
+    width: 100%;
+}
+
+/* Premium Badge Card Individual Component Block */
+.member-badge-card {
+    flex: 1; 
+    background-color: #CAC6BD; /* Brand matching cement gray */
+    border-radius: 16px;
+    overflow: hidden; /* Crucial to keep header blocks inside card border radius curves */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensures cards stretch cleanly to boundaries inside grid environments */
+}
+
+/* Dark colored top name banner header */
+.member-badge-header {
+    background-color: #5C4033; 
+    padding: 14px 20px;
+}
+
+/* High contrast name text style (Inverted brand cream tint) */
+.member-badge-header h2 {
+    color: #F3EFDD; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Details and credentials metadata padding body area */
+.member-badge-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Uniform rows spacing between detail blocks */
+    flex-grow: 1;
+}
+
+.member-badge-body p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #000000;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 🔒 Fixed label constraint: Forces labels to 100px so colon details line up vertically */
+.member-badge-body strong {
+    font-weight: 600;
+    color: #000000;
+    display: inline-block;
+    width: 100px; 
+}
+
+/* Mini bio segment title text */
+.member-badge-bio-title {
+    font-size: 14px !important;
+    text-transform: uppercase;
+    color: #555550 !important; /* Low profile shade establishing hierarchy */
+    font-weight: bold;
+    margin-top: 5px !important;
+}
+
+/* Embedded bio profile description frame box */
+.member-badge-bio-content {
+    background-color: #E2DDD0; /* Darker tone generating an inset concave finish */
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px !important;
+    color: #222222 !important;
+    line-height: 1.5;
+    flex-grow: 1; /* Stretches the description fields gracefully down to fill card bases */
+    white-space: pre-wrap; /* Safeguards user descriptive custom line returns */
+    word-wrap: break-word; /* Intercepts structural breakdown breaks from extreme string feeds */
 }
