@@ -297,7 +297,7 @@ h1 {
     color: #F3EFDD;          
     text-decoration: none;
     font-size: 36px;
-    font-family: "Marker Felt", fantasy;
+    font-family: Arial, sans-serif;
     border-radius: 50%; /* Truncates bounding box into a perfect circle */
     display: flex;
     justify-content: center;
