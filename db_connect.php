@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "recipe_db";
+$database = "recipe_app";
 
 $conn = new mysqli($host, $username, $password, $database);
 
