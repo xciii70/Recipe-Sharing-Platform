@@ -1,0 +1,60 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="English">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitchenary - Add Recipe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="recipe-page-body">
+
+<nav class="navbar">
+    <div class="nav-logo">
+        <a href="index.php">🍳 Kitchenary</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.php" class="active">Home Page</a></li>
+        <li><a href="members.php">Group Members</a></li>
+        <li><a href="logout.php" class="btn-logout">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="recipe-form-container">
+    <h1 class="recipe-form-title">Add New Recipe</h1>
+    <form action="add_recipe_action.php" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label>Recipe Image</label>
+            <input type="file" name="image" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label>Recipe Title</label>
+            <input type="text" name="title" required placeholder="Untitled Recipe">
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" name="category" required placeholder="e.g. Dessert, Breakfast">
+        </div>
+
+        <div class="form-group">
+            <label>Ingredients</label>
+            <textarea name="ingredients" required placeholder="What do you need..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Instructions</label>
+            <textarea name="instructions" required placeholder="How is it made..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-recipe-submit">Add Recipe</button>
+    </form>
+</div>
+
+</body>
+</html>
