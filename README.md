@@ -16,15 +16,20 @@ The application is specifically optimized to run efficiently on a hardware-const
 - `db_connect.php` - Database connection configuration.
 - `login.php` - User authentication page.
 - `signup.php` - User register page. 
+- `register_action.php` - 
 - `logout.php` - User exit page.
 - `index.php` - Home dashboard showing the recipe directory.
 - `recipes_detail.php` - Single recipe detailed view panel.
+- `add_recipe_action.php` - 
 - `add_recipes.php` - Server-side data processing and insertion logic and user interface for the add function..
 - `edit_recipes.php` - Recipe editing page.
-- `delete_recipes.php` - Backend side for delete function.
+- `edit_recipe_action.php` - 
+- `real_edit_page.php` - 
+- `delete_recipe_action.php` - Backend side for delete function.
+- `members.html` - Introductions for the contributers.
 - `style.css` - Style for user interface along side html. 
-- `members.php` - Integrated team profile presentation page.
-- `database.sql` - Exported MariaDB database creation schema.
+
+
 
 ## Project Documentation
 Please refer to the following mandatory files for full configurations:
