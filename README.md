@@ -21,7 +21,7 @@ The application is specifically optimized to run efficiently on a hardware-const
 - `index.php` - Home dashboard showing the recipe directory.
 - `recipes_detail.php` - Single recipe detailed view panel.
 - `add_recipe_action.php` - 
-- `add_recipes.php` - Server-side data processing and insertion logic and user interface for the add function..
+- `add_recipes.php` - Server-side data processing and insertion logic and user interface for the add function.
 - `edit_recipes.php` - Recipe editing page.
 - `edit_recipe_action.php` - 
 - `real_edit_page.php` - 
