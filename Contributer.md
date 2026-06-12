@@ -4,12 +4,12 @@ Here shows who are in our team and what have each of us done in the project.
 
 ---
 
-1. **Thomas**
+1. **Thomas (LiOnion8989)**
    * Responsible for the backend of the web application.
    * Setup and make MariaDB, PHP, and Apache2 working. 
    
-2. **Tim**
+2. **Tim (Am1tto)**
    * Responsible for setting up all of the database and test if the web application works.
   
-3. **Julia**
+3. **Julia (xciii70)**
    * Responsible for the front end and UI/UX of the website including html and style.css. 
