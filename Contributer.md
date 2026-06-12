@@ -12,4 +12,4 @@ Here shows who are in our team and what have each of us done in the project.
    * Responsible for setting up all of the database and test if the web application works.
   
 3. **Julia**
-   * Responsible for the frontend and UI/UX of the website including html and css. 
+   * Responsible for the front end and UI/UX of the website including html and style.css. 
