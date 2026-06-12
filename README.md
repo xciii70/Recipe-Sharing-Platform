@@ -19,10 +19,8 @@ The application is specifically optimized to run efficiently on a hardware-const
 - `logout.php` - User exit page.
 - `index.php` - Home dashboard showing the recipe directory.
 - `recipes_detail.php` - Single recipe detailed view panel.
-- `add_recipes.html` - User interface for the add function.
-- `add_recipes.php` - Server-side data processing and insertion logic.
+- `add_recipes.php` - Server-side data processing and insertion logic and user interface for the add function..
 - `edit_recipes.php` - Recipe editing page.
-- `delete_recipes.html` - User interface for the delete function.
 - `delete_recipes.php` - Backend side for delete function.
 - `style.css` - Style for user interface along side html. 
 - `members.php` - Integrated team profile presentation page.
