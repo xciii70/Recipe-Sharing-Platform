@@ -290,3 +290,27 @@ Pending:
 
 Reason:
 Database schema is maintained separately and has not yet been deployed to the Raspberry Pi.
+
+
+# Frontend Deployment & UI Verification Guide
+
+This guide details the frontend architecture of **Kitchenary**, file structure validation, and the step-by-step User Interface (UI) verification process to ensure the responsive design and styling properties are functioning correctly.
+
+---
+
+## 📁 1. Frontend File Structure
+
+Ensure all frontend assets, views, and styles are correctly uploaded to the project root directory on the Raspberry Pi at `/var/www/html/kitchenary/`. 
+
+The standard deployment file structure must look like this:
+
+```text
+/var/www/html/kitchenary/
+├── style.css           # 🔒 Core stylesheet (Handles grids, full-bleed images, and link resets)
+├── login.php           # User authentication entry view (Compact Grey-Card design)
+├── index.php           # Responsive dashboard (Recipe Auto-Fill Grid System)
+├── recipes_detail.php  # Detailed view page for individual recipe strings
+├── add_recipes.php     # Custom recipe creation form sheet (With multipart image uploads)
+├── members.php         # Group profile showcase view (Symmetrical ID Badges)
+├── logout.php          # Session termination and routing handler
+└── uploads/            # 📁 Destination folder for uploaded recipe graphics (chmod 777)
