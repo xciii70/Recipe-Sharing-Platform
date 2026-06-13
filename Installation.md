@@ -190,6 +190,92 @@ pwd
 
 ⸻
 
+MariaDB SetupЖ
+
+Install MariaDB:
+sudo apt install mariadb-server
+Start service:
+sudo systemctl start mariadb
+Enable startup:
+sudo systemctl enable mariadb
+Verify installation:
+sudo systemctl status mariadb
+
+⸻
+
+Create Database
+
+Login:
+sudo mysql
+Create database:
+CREATE DATABASE kitchenary;
+Select database:
+USE kitchenary;
+
+⸻
+
+Create Tables
+Users table:
+
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50) UNIQUE NOT NULL,
+password VARCHAR(255) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Recipes table:
+
+CREATE TABLE recipes (
+id INT AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(255) NOT NULL,
+category VARCHAR(100),
+ingredients TEXT,
+instructions TEXT,
+image VARCHAR(255),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Verify:
+SHOW TABLES;
+Exit:
+EXIT;
+
+⸻
+
+Database Connection
+Edit:
+sudo nano db_connect.php
+Connection settings:
+Host: localhost
+Username: root
+Password: (empty)
+Database: kitchenary
+
+⸻
+
+Test Connection
+Create test file:
+test_db.php
+Run:
+http://169.254.1.1/kitchenary/test_db.php
+Expected:
+Connected successfully!
+
+Login Functionality
+
+User login:
+login.php
+
+User logout:
+logout.php
+
+Authentication:
+PHP sessions and MariaDB
+
+Status:
+Working successfully
+
 Current Status
 
 Working:
@@ -200,10 +286,6 @@ Working:
 * Kitchenary frontend
 
 Pending:
-* MariaDB installation
-* Database import
-* Database connection
-* Login functionality
 * Recipe CRUD operations
 
 Reason:
